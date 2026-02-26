@@ -143,6 +143,18 @@
   cursor: not-allowed;
 }
 
+.guestList {
+  margin-bottom: 20px;
+}
+
+.guestList .input {
+  margin-bottom: 8px;
+}
+
+.guestList .input:last-child {
+  margin-bottom: 0;
+}
+
 .error {
   text-align: center;
   color: #b5564e;

@@ -8,16 +8,29 @@ import Flourish from "./Flourish";
 const SCRIPT_URL = process.env.NEXT_PUBLIC_RSVP_URL || "";
 
 export default function Rsvp() {
-  const [form, setForm] = useState({
-    name: "",
-    attending: "",
-    guestNames: "",
-    dietary: "",
-  });
+  const [name, setName] = useState("");
+  const [attending, setAttending] = useState("");
+  const [partySize, setPartySize] = useState(1);
+  const [guestNames, setGuestNames] = useState([""]);
+  const [dietary, setDietary] = useState("");
   const [status, setStatus] = useState("idle");
 
-  function update(field) {
-    return (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
+  function handlePartySize(e) {
+    const size = Math.max(1, Math.min(20, parseInt(e.target.value) || 1));
+    setPartySize(size);
+    setGuestNames((prev) => {
+      const next = [...prev];
+      while (next.length < size) next.push("");
+      return next.slice(0, size);
+    });
+  }
+
+  function updateGuest(index, value) {
+    setGuestNames((prev) => {
+      const next = [...prev];
+      next[index] = value;
+      return next;
+    });
   }
 
   async function handleSubmit(e) {
@@ -33,10 +46,11 @@ export default function Rsvp() {
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: form.name,
-          attending: form.attending,
-          guestNames: form.guestNames,
-          dietary: form.dietary,
+          name,
+          attending,
+          partySize,
+          guestNames: guestNames.join("\n"),
+          dietary,
           timestamp: new Date().toISOString(),
         }),
       });
@@ -89,15 +103,17 @@ export default function Rsvp() {
                 <input
                   type="text"
                   required
-                  value={form.name}
-                  onChange={update("name")}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className={styles.input}
                   placeholder="First and last name"
                 />
               </label>
 
               <fieldset className={styles.fieldset}>
-                <legend className={styles.legend}>Will you be attending?</legend>
+                <legend className={styles.legend}>
+                  Will you be attending?
+                </legend>
                 <div className={styles.radioGroup}>
                   <label className={styles.radio}>
                     <input
@@ -105,8 +121,8 @@ export default function Rsvp() {
                       name="attending"
                       value="yes"
                       required
-                      checked={form.attending === "yes"}
-                      onChange={update("attending")}
+                      checked={attending === "yes"}
+                      onChange={(e) => setAttending(e.target.value)}
                     />
                     <span>Joyfully accepts</span>
                   </label>
@@ -115,32 +131,49 @@ export default function Rsvp() {
                       type="radio"
                       name="attending"
                       value="no"
-                      checked={form.attending === "no"}
-                      onChange={update("attending")}
+                      checked={attending === "no"}
+                      onChange={(e) => setAttending(e.target.value)}
                     />
                     <span>Regretfully declines</span>
                   </label>
                 </div>
               </fieldset>
 
-              {form.attending === "yes" && (
+              {attending === "yes" && (
                 <>
                   <label className={styles.label}>
-                    Names of all guests in your party
-                    <textarea
-                      value={form.guestNames}
-                      onChange={update("guestNames")}
-                      className={styles.textarea}
-                      placeholder="Include yourself, plus-ones, and children — one name per line"
-                      rows={4}
+                    Number of guests in your party
+                    <input
+                      type="number"
+                      min={1}
+                      max={20}
+                      value={partySize}
+                      onChange={handlePartySize}
+                      className={styles.input}
                     />
                   </label>
+
+                  <div className={styles.guestList}>
+                    <p className={styles.label}>
+                      Names of each guest (including yourself)
+                    </p>
+                    {guestNames.map((g, i) => (
+                      <input
+                        key={i}
+                        type="text"
+                        value={g}
+                        onChange={(e) => updateGuest(i, e.target.value)}
+                        className={styles.input}
+                        placeholder={`Guest ${i + 1}`}
+                      />
+                    ))}
+                  </div>
 
                   <label className={styles.label}>
                     Dietary restrictions or allergies
                     <textarea
-                      value={form.dietary}
-                      onChange={update("dietary")}
+                      value={dietary}
+                      onChange={(e) => setDietary(e.target.value)}
                       className={styles.textarea}
                       placeholder="Let us know and we'll take care of it (or leave blank if none)"
                       rows={3}
