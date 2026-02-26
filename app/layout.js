@@ -16,6 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://wedding-daphnehanse11.vercel.app"),
   title: "Daphne & Matt — September 26, 2026",
   description:
     "Join us to celebrate the wedding of Daphne and Matt on September 26, 2026 at the National Capital Trolley Museum in Colesville, Maryland.",

@@ -1,4 +1,5 @@
 import styles from "./Hero.module.css";
+import Countdown from "./Countdown";
 
 export default function Hero() {
   return (
@@ -13,6 +14,7 @@ export default function Hero() {
           <br />
           Colesville, Maryland
         </p>
+        <Countdown />
       </div>
     </section>
   );

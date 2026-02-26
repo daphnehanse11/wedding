@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import styles from "./Nav.module.css";
 
 const links = [
-  { label: "Our Story", href: "#our-story" },
   { label: "Details", href: "#details" },
   { label: "Travel", href: "#travel" },
   { label: "FAQ", href: "#faq" },

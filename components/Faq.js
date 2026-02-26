@@ -30,6 +30,14 @@ const faqs = [
     a: "Your presence is the greatest gift! If you'd like to give something, registry details will be shared soon.",
   },
   {
+    q: "Will there be trolley rides?",
+    a: "Yes! There will be trolley rides at the museum — it's one of the perks of this unique venue.",
+  },
+  {
+    q: "What about the food?",
+    a: "The menu will be fully vegetarian. If you have any dietary restrictions or allergies, please let us know when you RSVP and we'll make sure you're taken care of.",
+  },
+  {
     q: "When should I RSVP by?",
     a: "Please RSVP by August 26, 2026. A link to respond will be available here soon.",
   },

@@ -9,7 +9,7 @@ export default function Details() {
         <div className={styles.grid}>
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Ceremony</h3>
-            <p className={styles.time}>4:00 PM</p>
+            <p className={styles.time}>5:00 PM</p>
             <p className={styles.place}>National Capital Trolley Museum</p>
             <p className={styles.address}>
               1313 Bonifant Road
@@ -19,7 +19,7 @@ export default function Details() {
           </div>
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Reception</h3>
-            <p className={styles.time}>5:30 PM</p>
+            <p className={styles.time}>6:30 PM</p>
             <p className={styles.place}>National Capital Trolley Museum</p>
             <p className={styles.address}>
               Celebration to follow the ceremony
