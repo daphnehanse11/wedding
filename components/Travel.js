@@ -18,6 +18,14 @@ export default function Travel() {
             <p className={styles.muted}>
               Parking is available on-site at no charge.
             </p>
+            <a
+              href="https://maps.google.com/?q=National+Capital+Trolley+Museum+1313+Bonifant+Rd+Colesville+MD+20905"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.mapLink}
+            >
+              Get directions
+            </a>
           </div>
 
           <div className={styles.card}>
@@ -41,6 +49,15 @@ export default function Travel() {
                 <span className={styles.muted}>
                   8727 Colesville Road, Silver Spring, MD
                 </span>
+                <br />
+                <a
+                  href="https://maps.google.com/?q=DoubleTree+by+Hilton+Silver+Spring+8727+Colesville+Rd+Silver+Spring+MD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.mapLink}
+                >
+                  View on Google Maps
+                </a>
               </li>
               <li>
                 <strong>Courtyard by Marriott Silver Spring</strong>
@@ -48,6 +65,15 @@ export default function Travel() {
                 <span className={styles.muted}>
                   12521 Prosperity Drive, Silver Spring, MD
                 </span>
+                <br />
+                <a
+                  href="https://maps.google.com/?q=Courtyard+by+Marriott+Silver+Spring+Downtown+12521+Prosperity+Dr+Silver+Spring+MD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.mapLink}
+                >
+                  View on Google Maps
+                </a>
               </li>
             </ul>
             <p className={styles.muted}>

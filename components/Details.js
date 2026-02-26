@@ -16,6 +16,14 @@ export default function Details() {
               <br />
               Colesville, MD 20905
             </p>
+            <a
+              href="https://maps.google.com/?q=National+Capital+Trolley+Museum+1313+Bonifant+Rd+Colesville+MD+20905"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.mapLink}
+            >
+              View on Google Maps
+            </a>
           </div>
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Reception</h3>

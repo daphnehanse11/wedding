@@ -26,6 +26,13 @@
   font-size: 0.9rem;
 }
 
+.mapLink {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+}
+
 .hotels,
 .airports {
   list-style: none;
