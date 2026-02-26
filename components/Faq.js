@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: "Can I bring a plus-one?",
-    a: "We have a limited guest list, so please refer to your invitation for the number of seats reserved in your honor. If you have questions, don't hesitate to reach out.",
+    a: "Plus-ones are welcome! Just make sure they are included on your RSVP so we can get an accurate food count.",
   },
   {
     q: "Are children welcome?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Will there be trolley rides?",
-    a: "Yes! There will be trolley rides at the museum — it's one of the perks of this unique venue.",
+    a: "Yes! There will be trolley rides at the museum.",
   },
   {
     q: "What about the food?",
