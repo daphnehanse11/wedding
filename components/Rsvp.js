@@ -10,13 +10,19 @@ const SCRIPT_URL = process.env.NEXT_PUBLIC_RSVP_URL || "";
 export default function Rsvp() {
   const [name, setName] = useState("");
   const [attending, setAttending] = useState("");
-  const [partySize, setPartySize] = useState(1);
-  const [guestNames, setGuestNames] = useState([""]);
+  const [partySize, setPartySize] = useState("");
+  const [guestNames, setGuestNames] = useState([]);
   const [dietary, setDietary] = useState("");
   const [status, setStatus] = useState("idle");
 
   function handlePartySize(e) {
-    const size = Math.max(1, Math.min(20, parseInt(e.target.value) || 1));
+    const raw = e.target.value;
+    if (raw === "") {
+      setPartySize("");
+      setGuestNames([]);
+      return;
+    }
+    const size = Math.max(1, Math.min(20, parseInt(raw) || 1));
     setPartySize(size);
     setGuestNames((prev) => {
       const next = [...prev];
@@ -142,7 +148,7 @@ export default function Rsvp() {
               {attending === "yes" && (
                 <>
                   <label className={styles.label}>
-                    Number of guests in your party
+                    Number of guests in your party (including yourself)
                     <input
                       type="number"
                       min={1}
