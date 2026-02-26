@@ -1,0 +1,25 @@
+.section {
+  padding: 0 24px 80px;
+  background-color: var(--color-bg);
+}
+
+.frame {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.photo {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 0 20px 56px;
+  }
+
+  .frame {
+    max-width: 100%;
+  }
+}

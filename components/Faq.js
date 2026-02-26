@@ -1,4 +1,6 @@
 import styles from "./Faq.module.css";
+import FadeIn from "./FadeIn";
+import Flourish from "./Flourish";
 
 const faqs = [
   {
@@ -47,14 +49,18 @@ export default function Faq() {
   return (
     <section id="faq" className="section section-alt">
       <div className="container">
-        <h2 className="section-title">Questions &amp; Answers</h2>
-        <div className="divider" />
+        <FadeIn>
+          <h2 className="section-title">Questions &amp; Answers</h2>
+          <Flourish />
+        </FadeIn>
         <dl className={styles.list}>
-          {faqs.map(({ q, a }) => (
-            <div key={q} className={styles.item}>
-              <dt className={styles.question}>{q}</dt>
-              <dd className={styles.answer}>{a}</dd>
-            </div>
+          {faqs.map(({ q, a }, i) => (
+            <FadeIn key={q} delay={i * 80}>
+              <div className={styles.item}>
+                <dt className={styles.question}>{q}</dt>
+                <dd className={styles.answer}>{a}</dd>
+              </div>
+            </FadeIn>
           ))}
         </dl>
       </div>
