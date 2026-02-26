@@ -159,8 +159,8 @@ export default function Rsvp() {
 
               {status === "error" && (
                 <p className={styles.error}>
-                  Something went wrong. Please try again or reach out to us
-                  directly.
+                  Something went wrong. Please try again or email us at{" "}
+                  <a href="mailto:daphne@hansell.net">daphne@hansell.net</a>.
                 </p>
               )}
             </form>
