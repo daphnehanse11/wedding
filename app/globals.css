@@ -1,0 +1,102 @@
+:root {
+  --color-bg: #faf8f5;
+  --color-bg-alt: #f3efe9;
+  --color-text: #3a3632;
+  --color-text-light: #6b6560;
+  --color-accent: #9caa8e;
+  --color-accent-light: #c7d1be;
+  --color-rose: #c9a9a6;
+  --color-divider: #ddd5cc;
+  --color-white: #ffffff;
+
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-sans: "Montserrat", "Helvetica Neue", sans-serif;
+
+  --max-width: 800px;
+  --nav-height: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section {
+  padding: 80px 24px;
+}
+
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 48px;
+  letter-spacing: 0.02em;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-divider);
+  margin: 0 auto 48px;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+}

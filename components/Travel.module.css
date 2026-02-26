@@ -1,0 +1,53 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.card {
+  text-align: left;
+}
+
+.card p {
+  font-weight: 300;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.muted {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.hotels,
+.airports {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.hotels li,
+.airports li {
+  margin-bottom: 12px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.hotels li strong,
+.airports li strong {
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
